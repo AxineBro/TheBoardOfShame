@@ -1,0 +1,177 @@
+.quote-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(248, 248, 248, 0.9) 100%
+  );
+  padding: 30px;
+  margin: 30px 20px; /* сверху/снизу 30px, слева/справа 0 */
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  color: #222;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+body {
+  background-image: url("img/back.jpg");
+  background-size: 100% auto; /* Растягивает по ширине, высота автоматическая */
+  background-repeat: repeat-y; /* Повторяет по вертикали (по высоте) */
+  background-position: center; /* Центрирует */
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  color: #ffffff;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(100, 149, 237, 0.5),
+    0 0 20px rgba(100, 149, 237, 0.4);
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+}
+
+h1:hover {
+  text-shadow: 0 0 15px rgba(100, 149, 237, 0.7),
+    0 0 25px rgba(100, 149, 237, 0.5);
+}
+
+h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.2rem;
+  background: linear-gradient(to right, #8e2cf7, #2575fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 25px 0;
+  display: inline-block;
+  padding-left: 30px; /* Регулируйте значение по желанию */
+}
+
+.content-nav {
+    
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 40px 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+}
+
+.content-nav h2 {
+  font-family: 'Montserrat', sans-serif;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.content-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content-nav li {
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 30px;
+  transition: transform 0.3s ease;
+}
+
+.content-nav li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  transition: transform 0.3s ease;
+}
+
+.content-nav a {
+  text-decoration: none;
+  color: #34495e;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  display: block;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.content-nav a:hover {
+  color: #e74c3c;
+  padding-left: 5px;
+  border-bottom-color: #3498db;
+}
+
+.content-nav li:hover::before {
+  transform: translateX(5px);
+}
+
+.table-style {
+  width: 98%;
+  border-collapse: collapse;
+  margin: 30px 10px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(5px);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.table-style th {
+  background: rgba(52, 152, 219, 0.9);
+  color: white;
+  padding: 15px;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.table-style td {
+  padding: 12px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+.table-style tr:last-child td {
+  border-bottom: none;
+}
+
+.table-style tr:hover td {
+  background: rgba(241, 241, 241, 0.7);
+}
+
+.polaroid {
+  background: white;
+  padding: 15px 15px 40px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transform: rotate(-1deg);
+  transition: all 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.polaroid img {
+  width: 100%;
+  border: 1px solid #eee;
+}
+
+.polaroid-caption {
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  font-size: 1.3rem;
+  color: #333;
+  margin-top: 15px;
+}
