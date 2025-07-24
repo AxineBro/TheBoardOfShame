@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Музыка + Видео в золотой рамке</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Видео VIP</h1>
+
+    
+
+    <!-- Аудио для фоновой музыки -->
+    <audio id="bgMusic" loop>
+      <source src="music/music1.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Панель управления музыкой -->
+    <div class="controls">
+      <button class="play-button" id="playMusicBtn">🔊 Включить звук</button>
+      <input
+        type="range"
+        min="0"
+        max="1"
+        step="0.01"
+        value="0.5"
+        class="volume-slider"
+        id="volumeSlider"
+      />
+    </div>
+<!-- Золотая рамка с видео (без звука) -->
+    <div class="gold-frame">
+      <video width="800" loop muted autoplay playsinline>
+        <source src="mov/Stepa.mp4" type="video/mp4" />
+        Ваш браузер не поддерживает видео.
+      </video>
+    </div>
+    <script>
+      const bgMusic = document.getElementById("bgMusic");
+      const playBtn = document.getElementById("playMusicBtn");
+      const volumeSlider = document.getElementById("volumeSlider");
+
+      // Устанавливаем громкость (по умолчанию 50%)
+      bgMusic.volume = 0.5;
+
+      // Пытаемся запустить музыку автоматически
+      document.addEventListener("DOMContentLoaded", () => {
+        bgMusic.play().catch((error) => {
+          console.log("Автовоспроизведение заблокировано. Нажмите кнопку.");
+          playBtn.textContent = "▶ Включить музыку";
+        });
+      });
+
+      // Кнопка включения звука (если автовоспроизведение заблокировано)
+      playBtn.addEventListener("click", () => {
+        if (bgMusic.paused) {
+          bgMusic.play();
+          playBtn.textContent = "🔊 Звук включён";
+        } else {
+          bgMusic.pause();
+          playBtn.textContent = "▶ Включить музыку";
+        }
+      });
+
+      // Регулятор громкости
+      volumeSlider.addEventListener("input", () => {
+        bgMusic.volume = volumeSlider.value;
+      });
+    </script>
+  </body>
+</html>
